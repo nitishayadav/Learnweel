@@ -1,0 +1,90 @@
+<html>
+<head>
+<script src=".\jquery\jquery.js"></script>
+<script src=".\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href=".\bootstrap-3.4.1-dist\css\bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="search_tools.css">
+<link rel="stylesheet" type="text/css" href="template.css">
+<script>
+  /*  $(document).ready(function(){
+ ("#btn_Delete").click(function (){
+            $("table tbody").find('input[name="record"]').each(function(){
+                if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    }); */
+	$(document).ready(function(){
+	$("#btn_Delete").on('click', function() {
+  var checked = jQuery('input:checkbox:checked').map(function () {
+    return this.value;
+}).get();
+jQuery('input:checkbox:checked').parents("tr").remove();
+
+});
+});
+
+</script>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+ <a href="admin_add_Product.html" class="btn btn-info" role="button" id="btn_New">New</a>
+  <a href="#" class="btn btn-info" role="button" id="btn_Delete">Delete</a>
+ 
+<!--<button type="button" class="btn btn-success" id="btn_New">New</button>
+<button type="button" class="btn btn-success" id="btn_Edit">Edit</button>
+<button type="button" class="btn btn-success" id="btn_Delete">Delete</button>-->
+
+</div>
+</div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th id="Product_Checked"></th>
+        <th id="Product_Id">Id</th>
+        <th id="Product_Status">Status</th>
+		<th id="Product_Name">Name</th>
+        <th id="Product_Added_Date">Date</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	    <td><input type="checkbox" value="" name="record"></td>
+        <td>1</td>
+        <td><div class="btn-group">
+		<a class="btn btn-micro disabled jgrid hasTooltip" title="Unpublished"><span class="icon-unpublish"></span></a>							
+		<button data-toggle="dropdown" class="dropdown-toggle btn btn-micro"><span class="caret"></span><span class="element-invisible">Actions for: JS Members Search</span></button>
+		<ul class="dropdown-menu"><li><a href = "javascript://" onclick="listItemTask('cb4', 'modules.duplicate')"><span class="icon-copy" aria-hidden="true"></span> Duplicate</a></li></ul>														
+		</div>
+				</td>
+</td>
+        <td><a href="admin_add_Product.html">Pencil</a></td>
+		<td>12/07/2019</td>
+      </tr>
+      <tr>
+	     <td><input type="checkbox" value="" name="record"></td>
+        <td>2</td>
+        <td></td>
+        <td><a href="admin_add_Product.html">Eraser</a></td>
+		<td>18/08/2019</td>
+      
+      </tr>
+      <tr>
+	     <td><input type="checkbox" value="" name="record"></td>
+        <td>3</td>
+        <td></trd>
+        <td><a href="admin_add_Product.html">Sharpener</a></td>
+		<td>12/03/2020</td>
+      
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</body>
+</html>
